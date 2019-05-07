@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   app:
   - apiVersion: v1
-    created: 2019-05-07T15:48:01.207074499+05:30
+    created: 2019-05-07T16:30:49.256763842+05:30
     digest: f79a617f9829550dac0ab82c61942c66953c470e7367776e094c178700efbcf3
     icon: ftp:///test.png
     maintainers:
@@ -10,6 +10,6 @@ entries:
       name: Manthila Mendis
     name: app
     urls:
-    - https://github.com/manthila/helm/app-0.0.1.tgz
+    - https://github.com/manthila/helm/tree/gh-pages/charts/app-0.0.1.tgz
     version: 0.0.1
-generated: 2019-05-07T15:48:01.203506714+05:30
+generated: 2019-05-07T16:30:49.254863174+05:30
