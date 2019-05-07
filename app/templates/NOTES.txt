@@ -1,0 +1,31 @@
+This will be printed at the end of a helm chart installation or status check
+
+
+
+--------------------------------------------------------------------------------
+Getting error "Error: no available release name found" when below comand is run.
+--------------------------------------------------------------------------------
+
+$ helm install ./test
+
+--------------------------------------------------------------------------------
+
+Execute below commands to resolve
+
+$ kubectl create serviceaccount --namespace kube-system tiller
+$ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+$ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+$ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+$ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+
+
+Check the helm version. This might take some time as new tiller pod is being created with above commands.
+
+$ helm version
+
+Once you get a similar output like below rerun install command.
+
+Client: &version.Version{SemVer:"v2.11.0-rc.4", GitCommit:"2e55dbe1fdb5fdb96b75ff144a339489417b146b", GitTreeState:"clean"}
+Server: &version.Version{SemVer:"v2.11.0-rc.4", GitCommit:"2e55dbe1fdb5fdb96b75ff144a339489417b146b", GitTreeState:"clean"}
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{.Values.svcName}}
+spec:
+  selector:
+    app: {{.Values.rcName}}
+  ports:
+  - protocol: TCP
+    port: 8888
+    targetPort: 8888
+  type: NodePort

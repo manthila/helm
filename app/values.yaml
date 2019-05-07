@@ -1,0 +1,4 @@
+Release.Name: "app"
+imageName: "manth24/app:latest"
+rcName: "app"
+svcName: "app"
